@@ -29,4 +29,4 @@ cd "$BUILD"/mpv
 # need to link against stdc++ in case libplacebo was built with glslang,
 # which requires that
 export LDFLAGS="$LDFLAGS $(pkg-config --libs fontconfig harfbuzz fribidi) -lstdc++"
-meson setup build -Dbuildtype=release $OPTIONS "$@"
+meson setup build -Dbuildtype=release -Dlibmpv=true --default-library=static --prefix=/dependency/mpv $OPTIONS "$@"
